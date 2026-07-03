@@ -1,0 +1,14 @@
+{
+  "name": "weweb-abo-erklaert",
+  "version": "1.0.0",
+  "description": "WeWeb Coded Component – «Abo erklärt»: alle Services, Vergleich Basis/Plus/Einzelbezug, Ersparnis.",
+  "private": true,
+  "scripts": {
+    "build": "weweb build",
+    "serve": "weweb serve"
+  },
+  "devDependencies": {
+    "@weweb/cli": "latest"
+  },
+  "license": "UNLICENSED"
+}
