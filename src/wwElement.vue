@@ -11,7 +11,10 @@
         <h2 class="abe-h2">Alle Services auf einen Blick</h2>
         <div class="abe-grid">
           <div class="hrk-card abe-svc" v-for="s in services" :key="s.titel">
-            <h3 class="abe-svc__titel">{{ s.titel }}</h3>
+            <h3 class="abe-svc__titel">
+              {{ s.titel }}
+              <span v-if="s.bald" class="abe-badge">Kommt bald</span>
+            </h3>
             <p class="abe-svc__text">{{ s.text }}</p>
           </div>
         </div>
@@ -87,7 +90,7 @@ export default {
         { titel: 'Verwarnung', text: 'Rechtssichere Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
-        { titel: 'Lohnabrechnung', text: 'Löhne berechnen und Lohnblatt mit allen Abzügen erstellen.' },
+        { titel: 'Lohnabrechnung', text: 'Löhne berechnen und Lohnblatt mit allen Abzügen erstellen.', bald: true },
         { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste (Plus).' },
         { titel: 'Personaldossier', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
         { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
@@ -235,7 +238,8 @@ export default {
 @media (max-width: 760px) { .abe-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .abe-grid { grid-template-columns: 1fr; } }
 .abe-svc { padding: var(--hrk-space-4); display: flex; flex-direction: column; gap: var(--hrk-space-1); }
-.abe-svc__titel { font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; }
+.abe-svc__titel { font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; display: flex; align-items: center; gap: var(--hrk-space-2); flex-wrap: wrap; }
+.abe-badge { display: inline-block; font-size: 0.72rem; font-weight: var(--hrk-fw-medium); line-height: 1.2; color: var(--hrk-warning); background: var(--hrk-warning-bg); border-radius: var(--hrk-radius-pill); padding: 2px var(--hrk-space-2); white-space: nowrap; }
 .abe-svc__text { font-size: var(--hrk-fs-small); color: var(--hrk-text-muted); margin: 0; line-height: 1.45; }
 
 /* Vergleichstabelle */
