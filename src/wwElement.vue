@@ -90,7 +90,6 @@ export default {
         { titel: 'Verwarnung', text: 'Rechtssichere Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
-        { titel: 'Lohnabrechnung', text: 'Löhne berechnen und Lohnblatt mit allen Abzügen erstellen.', bald: true },
         { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste (Plus).' },
         { titel: 'Personaldossier', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
         { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
