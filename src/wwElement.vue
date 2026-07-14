@@ -93,7 +93,7 @@ export default {
         { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste (Plus).' },
         { titel: 'Personaldossier', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
         { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
-        { titel: 'Emily — HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort, verständlich und geprüft.' },
+        { titel: 'Emily — HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort und verständlich — jede Antwort ist geprüft.' },
         { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente — einzeln zubuchbar, mit Plus günstiger.' },
       ],
       vergleich: [
