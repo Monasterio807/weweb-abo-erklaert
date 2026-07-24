@@ -30,26 +30,24 @@
               <tr>
                 <th class="abe-table__lead">Leistung</th>
                 <th>Ohne Abo</th>
-                <th>Basis<span class="abe-price">CHF 29/Mt.</span></th>
-                <th class="abe-col--plus">Plus<span class="abe-price">CHF 59/Mt.</span></th>
+                <th>Imploya<span class="abe-price">CHF 29/Mt.</span></th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="row in vergleich" :key="row.label">
                 <td class="abe-table__lead">{{ row.label }}</td>
                 <td>{{ row.ohne }}</td>
-                <td>{{ row.basis }}</td>
-                <td class="abe-col--plus">{{ row.plus }}</td>
+                <td>{{ row.imploya }}</td>
               </tr>
             </tbody>
           </table>
         </div>
-        <p class="abe-fine">Jährlich zahlst du 10× statt 12× — 2 Monate geschenkt (Basis CHF 290/Jahr, Plus CHF 590/Jahr). Beratung ist bei keinem Abo inklusive, aber jederzeit einzeln zubuchbar — mit Plus zu vergünstigtem Tarif.</p>
+        <p class="abe-fine">Jährlich zahlst du 10× statt 12× — 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
       </section>
 
       <section class="abe-section abe-save">
         <h2 class="abe-h2">Lohnt sich ein Abo für dich?</h2>
-        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 3 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 15 — mit Basis sind sie drin, dazu 20 Emily-Fragen pro Woche, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit einem Abo günstiger und plant besser.</p>
+        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30 — mit Imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
       </section>
 
       <div class="abe-cta">
@@ -65,9 +63,10 @@
 /**
  * WeWeb Coded Component — «Abo erklärt»
  * v1 (03.07.2026): Informationsseite. Beschreibt alle Services, vergleicht
- * Ohne-Abo / Basis / Plus und erklaert die Ersparnis. Rein statisch, kein
+ * Ohne-Abo mit dem Ein-Plan «Imploya» und erklaert die Ersparnis. Rein statisch, kein
+ * v2 (24.07.2026): Ein-Plan «Imploya» statt Basis/Plus; Emily pro Monat; Dokument ohne Abo CHF 6.
  * Backend-Call. Zahlen = Wahrheit aus subscription_limits + oeffentliche
- * Einzelpreise (CHF 3/Dokument, CHF 9/10 Emily-Fragen). Nichts erfunden.
+ * Einzelpreise ohne Abo (CHF 6/Dokument, CHF 9/10 Emily-Fragen). Nichts erfunden.
  * Einzelkauf ist bewusst KEIN Button — dafuer gibt es noch keinen Flow;
  * Einstieg laeuft ueber die Abo-Auswahl.
  */
@@ -90,21 +89,21 @@ export default {
         { titel: 'Verwarnung', text: 'Rechtssichere Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
-        { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste (Plus).' },
+        { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste.' },
         { titel: 'Personaldossier', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
         { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
         { titel: 'Emily — HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort und verständlich — jede Antwort ist geprüft.' },
-        { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente — einzeln zubuchbar, mit Plus günstiger.' },
+        { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente — jederzeit einzeln zubuchbar.' },
       ],
       vergleich: [
-        { label: 'Dokumente pro Monat', ohne: 'CHF 3/Stück', basis: '5 inklusive', plus: '25 inklusive' },
-        { label: 'Emily-Fragen', ohne: 'CHF 9 / 10 Fragen', basis: '20 pro Woche', plus: '30 pro Woche' },
-        { label: 'Vertrag, Kündigung, Krankmeldung', ohne: 'einzeln (CHF 3/Dok.)', basis: 'inklusive', plus: 'inklusive' },
-        { label: 'Zeugnis, Verwarnung, Stelleninserat', ohne: 'einzeln (CHF 3/Dok.)', basis: 'inklusive', plus: 'inklusive' },
-        { label: 'Personaldossier & Dokumenten-Upload', ohne: '—', basis: 'inklusive', plus: 'inklusive' },
-        { label: 'Offboarding-Paket & Saison-Kit', ohne: '—', basis: '—', plus: 'inklusive' },
-        { label: 'Onboarding-Checkliste & Vorlagen', ohne: '—', basis: '—', plus: 'inklusive' },
-        { label: 'Experten-Beratung', ohne: 'zubuchbar', basis: 'zubuchbar', plus: 'zubuchbar, günstiger' },
+        { label: 'Dokumente pro Monat', ohne: 'CHF 6/Stück', imploya: '15 inklusive' },
+        { label: 'Emily-Fragen', ohne: 'CHF 9 / 10 Fragen', imploya: '30 pro Monat' },
+        { label: 'Vertrag, Kündigung, Krankmeldung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
+        { label: 'Zeugnis, Verwarnung, Stelleninserat', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
+        { label: 'Personaldossier & Dokumenten-Upload', ohne: '—', imploya: 'inklusive' },
+        { label: 'Offboarding-Paket & Saison-Kit', ohne: '—', imploya: 'inklusive' },
+        { label: 'Onboarding-Checkliste & Vorlagen', ohne: '—', imploya: 'inklusive' },
+        { label: 'Experten-Beratung', ohne: 'zubuchbar', imploya: 'zubuchbar' },
       ],
     };
   },
