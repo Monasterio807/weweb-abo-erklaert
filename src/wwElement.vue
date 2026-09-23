@@ -30,7 +30,7 @@
               <tr>
                 <th class="abe-table__lead">Leistung</th>
                 <th>Ohne Abo</th>
-                <th>Imploya<span class="abe-price">CHF 29/Mt.</span></th>
+                <th>Imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
               </tr>
             </thead>
             <tbody>
@@ -137,8 +137,8 @@ export default {
   --hrk-bordeaux:        #7B2D3B;
   --hrk-bordeaux-dark:   #5E2129;
   --hrk-bordeaux-soft:   #F3E7E9;
-  --hrk-creme:           #FBF8F3;
-  --hrk-anthrazit:       #2B2B2B;
+  --hrk-creme: #F7F5F1;
+  --hrk-anthrazit: #241F1C;
   --hrk-gold:            #C9A24B;
   --hrk-gold-dark:       #B8902F;
   --hrk-on-dark:         #FFFFFF;
@@ -148,19 +148,19 @@ export default {
   --hrk-on-dark-muted:   rgba(255,255,255,.40);
   --hrk-on-dark-faint:   rgba(255,255,255,.12);
   --hrk-surface:         #FFFFFF;
-  --hrk-surface-muted:   #F5F1EB;
-  --hrk-border:          #ECE5D9;
-  --hrk-border-strong:   #DAD2C6;
-  --hrk-text:            #2B2B2B;
+  --hrk-surface-muted: #F2EFEA;
+  --hrk-border: #E2DDD5;
+  --hrk-border-strong: #CFC8BD;
+  --hrk-text: #241F1C;
   --hrk-text-muted:      #6B6357;
-  --hrk-success:         #2E7D5B;  --hrk-success-bg: #E5F1EB;
-  --hrk-warning:         #B7791F;  --hrk-warning-bg: #FBF1DD;
+  --hrk-success: #2A7254;  --hrk-success-bg: #E5F1EB;
+  --hrk-warning: #946010;  --hrk-warning-bg: #FBF1DD;
   --hrk-danger:          #B23A48;  --hrk-danger-bg:  #F8E7E9;
   --hrk-info:            #2F6F9F;  --hrk-info-bg:    #E6F0F7;
   --hrk-neutral:         #6B6357;  --hrk-neutral-bg: #EFEAE2;
-  --hrk-font-head: "Fraunces", "Lora", Georgia, serif;
+  --hrk-font-head: "Archivo", "Inter", system-ui, sans-serif;
   --hrk-font-body: "Inter", "Source Sans 3", system-ui, sans-serif;
-  --hrk-fs-h1: 1.9375rem;
+  --hrk-fs-h1: 1.875rem;
   --hrk-fs-h2: 1.375rem;
   --hrk-fs-h3: 1.125rem;
   --hrk-fs-body: 1.0625rem;
@@ -170,17 +170,29 @@ export default {
   --hrk-space-1: 4px;  --hrk-space-2: 8px;  --hrk-space-3: 12px;
   --hrk-space-4: 16px; --hrk-space-5: 24px; --hrk-space-6: 32px;
   --hrk-space-7: 48px;
-  --hrk-radius-sm: 8px; --hrk-radius-md: 12px; --hrk-radius-lg: 14px;
-  --hrk-radius-pill: 999px;
+  --hrk-radius-sm: 6px; --hrk-radius-md: 6px; --hrk-radius-lg: 10px;
+  --hrk-radius-pill: 6px;
   --hrk-shadow-card: 0 1px 2px rgba(40,35,30,.05);
-  --hrk-shadow-pop:  0 8px 28px rgba(40,35,30,.12);
-  --hrk-focus-ring:  0 0 0 3px rgba(123,45,59,.30);
+  --hrk-shadow-pop: 0 1px 2px rgba(40,35,30,.05);
+  --hrk-focus-ring: 0 0 0 3px rgba(51,71,91,.35);
   --hrk-tap-min: 44px;
   --hrk-page-max: 880px;
-  --hrk-overlay: rgba(0,0,0,.55);
+  --hrk-overlay: rgba(20,24,28,.55);
   --hrk-icon-size-sm: 16px;
   --hrk-icon-size-md: 20px;
   --hrk-icon-size-lg: 28px;
+  /* Design-Umsetzung 23.09.2026 (Phase 1): Schiefer, Schriften, zwei Radien, ein Schatten */
+  --hrk-schiefer: #33475B;
+  --hrk-schiefer-dark: #243444;
+  --hrk-schiefer-soft: #EBEEF1;
+  --hrk-font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --hrk-font-brand: "Fraunces", Georgia, serif;
+  --hrk-fs-xs: 0.8125rem;
+  --hrk-ls-caps: .06em;
+  --hrk-radius-field: 6px;
+  --hrk-radius-card: 10px;
+  --hrk-shadow: 0 1px 2px rgba(40,35,30,.05);
+  --hrk-page-wide: 1200px;
 }
 
 .hrk-root, .hrk-root * { box-sizing: border-box; }
@@ -194,27 +206,29 @@ export default {
   -webkit-font-smoothing: antialiased;
 }
 .hrk-page { width: 100%; max-width: var(--hrk-page-max); margin: 0 auto; padding: var(--hrk-space-6) var(--hrk-space-4); }
-.hrk-h1 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h1); font-weight: var(--hrk-fw-semibold); line-height: 1.12; letter-spacing: -.02em; color: var(--hrk-bordeaux); margin: 0 0 var(--hrk-space-3); }
+.hrk-h1 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h1); font-weight: var(--hrk-fw-semibold); line-height: 1.12; letter-spacing: -.02em; color: var(--hrk-text); margin: 0 0 var(--hrk-space-3); }
 .hrk-muted { color: var(--hrk-text-muted); }
 
 .hrk-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--hrk-space-2);
   min-height: var(--hrk-tap-min); padding: 0 var(--hrk-space-5);
   font: inherit; font-weight: var(--hrk-fw-semibold);
-  border-radius: var(--hrk-radius-md); border: 1px solid transparent;
+  border-radius: var(--hrk-radius-field); border: 1px solid transparent;
   cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s, transform .05s;
 }
 .hrk-btn:active { transform: translateY(1px); }
 .hrk-btn:focus-visible { outline: none; box-shadow: var(--hrk-focus-ring); }
 .hrk-btn--primary   { background: var(--hrk-bordeaux); color: var(--hrk-on-primary); }
 .hrk-btn--primary:hover { background: var(--hrk-bordeaux-dark); }
-.hrk-btn--ghost     { background: transparent; color: var(--hrk-bordeaux); }
-.hrk-btn--ghost:hover { background: var(--hrk-bordeaux-soft); }
+.hrk-btn--ghost     { background: transparent; color: var(--hrk-schiefer); }
+.hrk-btn--ghost:hover { background: var(--hrk-schiefer-soft); }
 .hrk-btn[disabled] { opacity: .5; cursor: not-allowed; }
 
 .hrk-card { background: var(--hrk-surface); border: 1px solid var(--hrk-border);
-  border-radius: var(--hrk-radius-lg); box-shadow: var(--hrk-shadow-card);
+  border-radius: var(--hrk-radius-card); box-shadow: var(--hrk-shadow);
   padding: var(--hrk-space-5); }
+/* Zahlen (Preise) in Mono, richten sich aus */
+.hrk-num { font-family: var(--hrk-font-mono); font-variant-numeric: tabular-nums; }
 
 @media (max-width: 600px) {
   :root, .hrk-root { --hrk-fs-h1: 1.625rem; }
@@ -224,11 +238,11 @@ export default {
 /* ============================================================
    Abo erklärt — komponentenspezifisch, nur --hrk-*-Tokens.
    ============================================================ */
-.abe-root { font-family: inherit; color: inherit; }
+.abe-root { font-family: var(--hrk-font-body); color: var(--hrk-text); }
 .abe-page { max-width: 820px; }
 .abe-header { text-align: center; margin-bottom: var(--hrk-space-6); }
 .abe-section { margin-bottom: var(--hrk-space-7); }
-.abe-h2 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h2); font-weight: var(--hrk-fw-semibold); color: var(--hrk-bordeaux); margin: 0 0 var(--hrk-space-4); }
+.abe-h2 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h2); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0 0 var(--hrk-space-4); }
 .abe-sub { margin: 0 0 var(--hrk-space-4); }
 
 /* Service-Grid */
@@ -236,26 +250,26 @@ export default {
 @media (max-width: 760px) { .abe-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 480px) { .abe-grid { grid-template-columns: 1fr; } }
 .abe-svc { padding: var(--hrk-space-4); display: flex; flex-direction: column; gap: var(--hrk-space-1); }
-.abe-svc__titel { font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; display: flex; align-items: center; gap: var(--hrk-space-2); flex-wrap: wrap; }
-.abe-badge { display: inline-block; font-size: 0.72rem; font-weight: var(--hrk-fw-medium); line-height: 1.2; color: var(--hrk-warning); background: var(--hrk-warning-bg); border-radius: var(--hrk-radius-pill); padding: 2px var(--hrk-space-2); white-space: nowrap; }
-.abe-svc__text { font-size: var(--hrk-fs-small); color: var(--hrk-text-muted); margin: 0; line-height: 1.45; }
+.abe-svc__titel { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; display: flex; align-items: center; gap: var(--hrk-space-2); flex-wrap: wrap; }
+.abe-badge { display: inline-block; font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-medium); line-height: 1.2; color: var(--hrk-warning); background: var(--hrk-warning-bg); border-radius: var(--hrk-radius-field); padding: 2px var(--hrk-space-2); white-space: nowrap; }
+.abe-svc__text { font-size: var(--hrk-fs-body); color: var(--hrk-text-muted); margin: 0; line-height: 1.45; }
 
 /* Vergleichstabelle */
-.abe-table-wrap { overflow-x: auto; border: 1px solid var(--hrk-border); border-radius: var(--hrk-radius-lg); background: var(--hrk-surface); }
-.abe-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: var(--hrk-fs-small); }
+.abe-table-wrap { overflow-x: auto; border: 1px solid var(--hrk-border); border-radius: var(--hrk-radius-card); background: var(--hrk-surface); }
+.abe-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: var(--hrk-fs-body); }
 .abe-table th, .abe-table td { padding: var(--hrk-space-3) var(--hrk-space-4); text-align: center; border-bottom: 1px solid var(--hrk-border); }
-.abe-table thead th { background: var(--hrk-surface-muted); color: var(--hrk-text); font-weight: var(--hrk-fw-semibold); vertical-align: top; }
+.abe-table thead th { background: var(--hrk-surface-muted); color: var(--hrk-schiefer); font-family: var(--hrk-font-head); font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-semibold); vertical-align: top; border-bottom-color: var(--hrk-border-strong); }
 .abe-table tbody tr:last-child td { border-bottom: none; }
 .abe-table__lead { text-align: left; font-weight: var(--hrk-fw-medium); color: var(--hrk-text); }
-.abe-price { display: block; font-size: 0.78rem; font-weight: var(--hrk-fw-regular); color: var(--hrk-text-muted); margin-top: 2px; }
-.abe-col--plus { background: var(--hrk-bordeaux-soft); color: var(--hrk-bordeaux); }
-.abe-table thead th.abe-col--plus { background: var(--hrk-bordeaux-soft); }
-.abe-fine { font-size: 0.82rem; color: var(--hrk-text-muted); margin: var(--hrk-space-3) 0 0; line-height: 1.5; }
+.abe-price { display: block; font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-regular); color: var(--hrk-text-muted); margin-top: 2px; }
+.abe-col--plus { background: var(--hrk-schiefer-soft); color: var(--hrk-schiefer); }
+.abe-table thead th.abe-col--plus { background: var(--hrk-schiefer-soft); }
+.abe-fine { font-size: var(--hrk-fs-small); color: var(--hrk-text-muted); margin: var(--hrk-space-3) 0 0; line-height: 1.5; }
 
 /* Ersparnis */
-.abe-save { background: var(--hrk-surface-muted); border-radius: var(--hrk-radius-lg); padding: var(--hrk-space-5); }
+.abe-save { background: var(--hrk-surface-muted); border-radius: var(--hrk-radius-card); padding: var(--hrk-space-5); }
 .abe-save .abe-h2 { margin-top: 0; }
-.abe-save__text { margin: 0; font-size: var(--hrk-fs-small); color: var(--hrk-text); line-height: 1.55; }
+.abe-save__text { margin: 0; font-size: var(--hrk-fs-body); color: var(--hrk-text); line-height: 1.55; }
 
 /* CTA */
 .abe-cta { display: flex; justify-content: center; gap: var(--hrk-space-3); flex-wrap: wrap; }
