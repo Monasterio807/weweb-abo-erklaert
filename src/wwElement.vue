@@ -174,7 +174,7 @@ export default {
   --hrk-radius-pill: 6px;
   --hrk-shadow-card: 0 1px 2px rgba(40,35,30,.05);
   --hrk-shadow-pop: 0 1px 2px rgba(40,35,30,.05);
-  --hrk-focus-ring: 0 0 0 3px rgba(51,71,91,.35);
+  --hrk-focus-ring: 0 0 0 2px var(--hrk-surface), 0 0 0 4px var(--hrk-bordeaux);
   --hrk-tap-min: 44px;
   --hrk-page-max: 880px;
   --hrk-overlay: rgba(20,24,28,.55);
