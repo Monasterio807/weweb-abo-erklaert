@@ -4,7 +4,7 @@
 
       <div class="abe-header">
         <h1 class="hrk-h1">Was steckt in Imploya?</h1>
-        <p class="hrk-muted">Alle Services im Überblick — und was sie mit oder ohne Abo kosten. Du entscheidest, was zu deinem Betrieb passt.</p>
+        <p class="hrk-muted">Alle Services im Überblick und was sie mit oder ohne Abo kosten. Du entscheidest, was zu deinem Betrieb passt.</p>
       </div>
 
       <section class="abe-section">
@@ -21,8 +21,8 @@
       </section>
 
       <section class="abe-section">
-        <h2 class="abe-h2">Mit oder ohne Abo — der Vergleich</h2>
-        <p class="hrk-muted abe-sub">Du kannst einzelne Leistungen ohne Abo nutzen und pro Stück zahlen. Ab ein paar Dokumenten im Monat lohnt sich ein Abo — und du musst nichts mehr mitzählen.</p>
+        <h2 class="abe-h2">Mit oder ohne Abo: der Vergleich</h2>
+        <p class="hrk-muted abe-sub">Du kannst einzelne Leistungen ohne Abo nutzen und pro Stück zahlen. Ab ein paar Dokumenten im Monat lohnt sich ein Abo, und du musst nichts mehr mitzählen.</p>
 
         <div class="abe-table-wrap">
           <table class="abe-table">
@@ -42,12 +42,12 @@
             </tbody>
           </table>
         </div>
-        <p class="abe-fine">Jährlich zahlst du 10× statt 12× — 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
+        <p class="abe-fine">Jährlich zahlst du 10× statt 12×: 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
       </section>
 
       <section class="abe-section abe-save">
         <h2 class="abe-h2">Lohnt sich ein Abo für dich?</h2>
-        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30 — mit Imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
+        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit Imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
       </section>
 
       <div class="abe-cta">
@@ -82,7 +82,7 @@ export default {
   data() {
     return {
       services: [
-        { titel: 'Arbeitsvertrag', text: 'L-GAV-konformer Vertrag in wenigen Minuten — mit den richtigen Klauseln.' },
+        { titel: 'Arbeitsvertrag', text: 'L-GAV-konformer Vertrag in wenigen Minuten, mit den richtigen Klauseln.' },
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
         { titel: 'Krankmeldung', text: 'Krankentaggeld-Meldung (KTG) ohne Papierkram erfasst.' },
         { titel: 'Unfallmeldung', text: 'Unfallmeldung (UVG) schnell und vollständig.' },
@@ -92,8 +92,8 @@ export default {
         { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste.' },
         { titel: 'Mitarbeitende', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
         { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
-        { titel: 'Emily — HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort und verständlich — jede Antwort ist geprüft.' },
-        { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente — jederzeit einzeln zubuchbar.' },
+        { titel: 'Emily, die HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort und verständlich, jede Antwort ist geprüft.' },
+        { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente, jederzeit einzeln zubuchbar.' },
       ],
       vergleich: [
         { label: 'Dokumente pro Monat', ohne: 'CHF 6/Stück', imploya: '15 inklusive' },
