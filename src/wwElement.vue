@@ -3,7 +3,7 @@
     <main class="abe-page hrk-page">
 
       <div class="abe-header">
-        <h1 class="hrk-h1">Was steckt in Imploya?</h1>
+        <h1 class="hrk-h1">Was steckt in imploya?</h1>
         <p class="hrk-muted">Alle Services im Überblick und was sie mit oder ohne Abo kosten. Du entscheidest, was zu deinem Betrieb passt.</p>
       </div>
 
@@ -30,7 +30,7 @@
               <tr>
                 <th class="abe-table__lead">Leistung</th>
                 <th>Ohne Abo</th>
-                <th>Imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
+                <th>imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
               </tr>
             </thead>
             <tbody>
@@ -47,7 +47,7 @@
 
       <section class="abe-section abe-save">
         <h2 class="abe-h2">Lohnt sich ein Abo für dich?</h2>
-        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit Imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
+        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
       </section>
 
       <div class="abe-cta">
@@ -63,8 +63,8 @@
 /**
  * WeWeb Coded Component — «Abo erklärt»
  * v1 (03.07.2026): Informationsseite. Beschreibt alle Services, vergleicht
- * Ohne-Abo mit dem Ein-Plan «Imploya» und erklaert die Ersparnis. Rein statisch, kein
- * v2 (24.07.2026): Ein-Plan «Imploya» statt Basis/Plus; Emily pro Monat; Dokument ohne Abo CHF 6.
+ * Ohne-Abo mit dem Ein-Plan «imploya» und erklaert die Ersparnis. Rein statisch, kein
+ * v2 (24.07.2026): Ein-Plan «imploya» statt Basis/Plus; Emily pro Monat; Dokument ohne Abo CHF 6.
  * Backend-Call. Zahlen = Wahrheit aus subscription_limits + oeffentliche
  * Einzelpreise ohne Abo (CHF 6/Dokument, CHF 9/10 Emily-Fragen). Nichts erfunden.
  * Einzelkauf ist bewusst KEIN Button — dafuer gibt es noch keinen Flow;
@@ -130,7 +130,7 @@ export default {
 
 <style scoped>
 /* ============================================================
-   Imploya — Design-Tokens (1:1-Kopie aus Coded-Components-Vorlage/
+   imploya — Design-Tokens (1:1-Kopie aus Coded-Components-Vorlage/
    design-tokens.css). Nur --hrk-*-Tokens/.hrk-*-Bausteine nutzen.
    ============================================================ */
 :root, .hrk-root {
