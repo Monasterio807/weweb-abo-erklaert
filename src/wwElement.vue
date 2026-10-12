@@ -134,13 +134,13 @@ export default {
    design-tokens.css). Nur --hrk-*-Tokens/.hrk-*-Bausteine nutzen.
    ============================================================ */
 :root, .hrk-root {
-  --hrk-bordeaux:        #7B2D3B;
-  --hrk-bordeaux-dark:   #5E2129;
-  --hrk-bordeaux-soft:   #F3E7E9;
+  --hrk-bordeaux:        #72323C;
+  --hrk-bordeaux-dark:   #5A2630;
+  --hrk-bordeaux-soft:   #F1E7E9;
   --hrk-creme: #F7F5F1;
   --hrk-anthrazit: #241F1C;
-  --hrk-gold:            #C9A24B;
-  --hrk-gold-dark:       #B8902F;
+  --hrk-gold:            #C3A359;
+  --hrk-gold-dark:       #A98A45;
   --hrk-on-dark:         #FFFFFF;
   --hrk-on-primary:     #FFFFFF;
   --hrk-on-dark-strong:  rgba(255,255,255,.92);
@@ -186,7 +186,7 @@ export default {
   --hrk-schiefer-dark: #243444;
   --hrk-schiefer-soft: #EBEEF1;
   --hrk-font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
-  --hrk-font-brand: "Fraunces", Georgia, serif;
+  --hrk-font-brand: "Gloock", Georgia, serif;
   --hrk-fs-xs: 0.8125rem;
   --hrk-ls-caps: .06em;
   --hrk-radius-field: 6px;
