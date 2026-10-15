@@ -1,58 +1,84 @@
 <template>
   <div class="hrk-root abe-root">
-    <main class="abe-page hrk-page">
+    <main class="abe-main">
 
-      <div class="abe-header">
-        <h1 class="hrk-h1">Was steckt in imploya?</h1>
-        <p class="hrk-muted">Alle Services im Überblick und was sie mit oder ohne Abo kosten. Du entscheidest, was zu deinem Betrieb passt.</p>
-      </div>
+      <!-- Kopf: Archivo-Label, grosser Gloock-Titel, Einleitung -->
+      <header class="abe-top">
+        <div class="abe-wrap">
+          <p class="abe-lab">Abo erklärt</p>
+          <h1 class="abe-h1">Was steckt in imploya?</h1>
+          <p class="abe-intro">Alle Services im Überblick und was sie mit oder ohne Abo kosten. Du entscheidest, was zu deinem Betrieb passt.</p>
+        </div>
+      </header>
 
-      <section class="abe-section">
-        <h2 class="abe-h2">Alle Services auf einen Blick</h2>
-        <div class="abe-grid">
-          <div class="hrk-card abe-svc" v-for="s in services" :key="s.titel">
-            <h3 class="abe-svc__titel">
-              {{ s.titel }}
-              <span v-if="s.bald" class="abe-badge">Kommt bald</span>
-            </h3>
-            <p class="abe-svc__text">{{ s.text }}</p>
+      <section class="abe-band abe-band--weiss">
+        <div class="abe-wrap abe-grp">
+          <div class="abe-grp__lab">
+            <span class="abe-nr" aria-hidden="true">01</span>
+            <h2 class="abe-gt">Alle Services auf einen Blick</h2>
+          </div>
+          <div class="abe-grp__body">
+            <ul class="abe-list">
+              <li class="abe-svc" v-for="s in services" :key="s.titel">
+                <h3 class="abe-svc__titel">
+                  {{ s.titel }}
+                  <span v-if="s.bald" class="abe-badge">Kommt bald</span>
+                </h3>
+                <p class="abe-svc__text">{{ s.text }}</p>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <section class="abe-section">
-        <h2 class="abe-h2">Mit oder ohne Abo: der Vergleich</h2>
-        <p class="hrk-muted abe-sub">Du kannst einzelne Leistungen ohne Abo nutzen und pro Stück zahlen. Ab ein paar Dokumenten im Monat lohnt sich ein Abo, und du musst nichts mehr mitzählen.</p>
+      <section class="abe-band abe-band--grau">
+        <div class="abe-wrap abe-grp">
+          <div class="abe-grp__lab">
+            <span class="abe-nr" aria-hidden="true">02</span>
+            <h2 class="abe-gt">Mit oder ohne Abo: der Vergleich</h2>
+          </div>
+          <div class="abe-grp__body">
+            <p class="abe-sub">Du kannst einzelne Leistungen ohne Abo nutzen und pro Stück zahlen. Ab ein paar Dokumenten im Monat lohnt sich ein Abo, und du musst nichts mehr mitzählen.</p>
 
-        <div class="abe-table-wrap">
-          <table class="abe-table">
-            <thead>
-              <tr>
-                <th class="abe-table__lead">Leistung</th>
-                <th>Ohne Abo</th>
-                <th>imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="row in vergleich" :key="row.label">
-                <td class="abe-table__lead">{{ row.label }}</td>
-                <td>{{ row.ohne }}</td>
-                <td>{{ row.imploya }}</td>
-              </tr>
-            </tbody>
-          </table>
+            <table class="abe-table">
+              <thead>
+                <tr>
+                  <th class="abe-table__lead">Leistung</th>
+                  <th>Ohne Abo</th>
+                  <th class="abe-col--abo">imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="row in vergleich" :key="row.label">
+                  <td class="abe-table__lead">{{ row.label }}</td>
+                  <td>{{ row.ohne }}</td>
+                  <td class="abe-col--abo">{{ row.imploya }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <p class="abe-fine">Jährlich zahlst du 10× statt 12×: 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
+          </div>
         </div>
-        <p class="abe-fine">Jährlich zahlst du 10× statt 12×: 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
       </section>
 
-      <section class="abe-section abe-save">
-        <h2 class="abe-h2">Lohnt sich ein Abo für dich?</h2>
-        <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
+      <section class="abe-band abe-band--weiss">
+        <div class="abe-wrap abe-grp">
+          <div class="abe-grp__lab">
+            <span class="abe-nr" aria-hidden="true">03</span>
+            <h2 class="abe-gt">Lohnt sich ein Abo für dich?</h2>
+          </div>
+          <div class="abe-grp__body">
+            <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
+          </div>
+        </div>
       </section>
 
-      <div class="abe-cta">
-        <button class="hrk-btn hrk-btn--primary" @click="choosePlan">Abo wählen</button>
-        <button v-if="hasBack" class="hrk-btn hrk-btn--ghost" @click="goBack">Zurück</button>
+      <!-- Eine Hauptaktion: Abo wählen. Zurück ist der Zweitweg. -->
+      <div class="abe-band abe-band--grau">
+        <div class="abe-wrap abe-cta">
+          <button class="abe-fw abe-fw--lg" @click="choosePlan">Abo wählen <svg class="abe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg></button>
+          <button v-if="hasBack" class="abe-bk" @click="goBack">Zurück</button>
+        </div>
       </div>
 
     </main>
@@ -64,12 +90,29 @@
  * WeWeb Coded Component — «Abo erklärt»
  * v1 (03.07.2026): Informationsseite. Beschreibt alle Services, vergleicht
  * Ohne-Abo mit dem Ein-Plan «imploya» und erklaert die Ersparnis. Rein statisch, kein
+ * v3 (15.10.2026): Optik Stil A «Editorial» (Entscheid 13.10.2026), Texte, Preise und Logik unveraendert.
  * v2 (24.07.2026): Ein-Plan «imploya» statt Basis/Plus; Emily pro Monat; Dokument ohne Abo CHF 6.
  * Backend-Call. Zahlen = Wahrheit aus subscription_limits + oeffentliche
  * Einzelpreise ohne Abo (CHF 6/Dokument, CHF 9/10 Emily-Fragen). Nichts erfunden.
  * Einzelkauf ist bewusst KEIN Button — dafuer gibt es noch keinen Flow;
  * Einstieg laeuft ueber die Abo-Auswahl.
  */
+// Schriften (Stil A, Entscheid 13.10.2026): Gloock (Titel), Archivo (Labels), Inter (Text). Der WeWeb-<head>
+// laedt sie nicht. Eigener Link-Id, damit das Paket von header-pro/footer (id hrk-fonts) nicht verdraengt
+// wird. Gleicher Anbieter wie bisher; ohne Laden gelten Georgia bzw. System-Schrift.
+function hrkEnsureBrandFont() {
+  try {
+    const doc = (typeof wwLib !== 'undefined' && wwLib && typeof wwLib.getFrontDocument === 'function')
+      ? wwLib.getFrontDocument()
+      : (typeof document !== 'undefined' ? document : null);
+    if (!doc || !doc.head || doc.getElementById('hrk-fonts-marke')) return;
+    const link = doc.createElement('link');
+    link.id = 'hrk-fonts-marke'; link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Archivo:wght@500;600&family=Gloock&family=Inter:wght@400;500;600&display=swap';
+    doc.head.appendChild(link);
+  } catch (e) { /* Georgia als Rueckfall */ }
+}
+
 export default {
   props: {
     content: { type: Object, required: true },
@@ -111,6 +154,9 @@ export default {
     aboUrl() { return ((this.content && this.content.aboUrl) || '/abo').toString(); },
     backUrl() { return ((this.content && this.content.backUrl) || '').toString(); },
     hasBack() { return this.backUrl.length > 0; },
+  },
+  mounted() {
+    hrkEnsureBrandFont();
   },
   methods: {
     emitEvent(name, payload) { this.$emit('trigger-event', { name, event: payload || {} }); },
@@ -193,6 +239,12 @@ export default {
   --hrk-radius-card: 10px;
   --hrk-shadow: 0 1px 2px rgba(40,35,30,.05);
   --hrk-page-wide: 1200px;
+  /* Stil A «Editorial» (Entscheid 13.10.2026): Linien, Warmgrau, Hauchfarben, Archivo-Labels */
+  --hrk-linie: #D6D0CA;
+  --hrk-warmgrau: #EFEBE7;
+  --hrk-gold-hauch: #FAF6EC;
+  --hrk-schiefer-hauch: #F2F5F8;
+  --hrk-font-label: "Archivo", "Inter", system-ui, sans-serif;
 }
 
 .hrk-root, .hrk-root * { box-sizing: border-box; }
@@ -205,72 +257,83 @@ export default {
   background: var(--hrk-creme);
   -webkit-font-smoothing: antialiased;
 }
-.hrk-page { width: 100%; max-width: var(--hrk-page-max); margin: 0 auto; padding: var(--hrk-space-6) var(--hrk-space-4); }
-.hrk-h1 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h1); font-weight: var(--hrk-fw-semibold); line-height: 1.12; letter-spacing: -.02em; color: var(--hrk-text); margin: 0 0 var(--hrk-space-3); }
-.hrk-muted { color: var(--hrk-text-muted); }
-
-.hrk-btn {
-  display: inline-flex; align-items: center; justify-content: center; gap: var(--hrk-space-2);
-  min-height: var(--hrk-tap-min); padding: 0 var(--hrk-space-5);
-  font: inherit; font-weight: var(--hrk-fw-semibold);
-  border-radius: var(--hrk-radius-field); border: 1px solid transparent;
-  cursor: pointer; text-decoration: none; transition: background .15s, border-color .15s, transform .05s;
-}
-.hrk-btn:active { transform: translateY(1px); }
-.hrk-btn:focus-visible { outline: none; box-shadow: var(--hrk-focus-ring); }
-.hrk-btn--primary   { background: var(--hrk-bordeaux); color: var(--hrk-on-primary); }
-.hrk-btn--primary:hover { background: var(--hrk-bordeaux-dark); }
-.hrk-btn--ghost     { background: transparent; color: var(--hrk-schiefer); }
-.hrk-btn--ghost:hover { background: var(--hrk-schiefer-soft); }
-.hrk-btn[disabled] { opacity: .5; cursor: not-allowed; }
-
-.hrk-card { background: var(--hrk-surface); border: 1px solid var(--hrk-border);
-  border-radius: var(--hrk-radius-card); box-shadow: var(--hrk-shadow);
-  padding: var(--hrk-space-5); }
 /* Zahlen (Preise) in Mono, richten sich aus */
 .hrk-num { font-family: var(--hrk-font-mono); font-variant-numeric: tabular-nums; }
 
-@media (max-width: 600px) {
-  :root, .hrk-root { --hrk-fs-h1: 1.625rem; }
-  .hrk-page { padding: var(--hrk-space-4) var(--hrk-space-3); }
-}
-
 /* ============================================================
-   Abo erklärt — komponentenspezifisch, nur --hrk-*-Tokens.
+   Abo erklärt — Stil A «Editorial» (Entscheid 13.10.2026, Phase 2).
+   Linien statt Karten, Text-Knoepfe (Schiefer, Gold-Unterstrich nur fuer die eine Hauptaktion),
+   grosse Gloock-Titel, Archivo-Labels, Weiss/Warmgrau im Wechsel, Raster Label-Spalte 220px + Inhalt.
+   Farbrollen: Bordeaux = Links/Hover, Schiefer = Knoepfe, Gold = nur Linien.
    ============================================================ */
+.hrk-root { background: var(--hrk-surface); }
 .abe-root { font-family: var(--hrk-font-body); color: var(--hrk-text); }
-.abe-page { max-width: 820px; }
-.abe-header { text-align: center; margin-bottom: var(--hrk-space-6); }
-.abe-section { margin-bottom: var(--hrk-space-7); }
-.abe-h2 { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-h2); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0 0 var(--hrk-space-4); }
-.abe-sub { margin: 0 0 var(--hrk-space-4); }
+.abe-root button:focus-visible { outline: 2px solid var(--hrk-schiefer); outline-offset: 3px; border-radius: 3px; box-shadow: none; }
+.abe-main { display: block; width: 100%; }
+.abe-wrap { max-width: 1120px; margin: 0 auto; padding: 0 var(--hrk-space-5); }
+.abe-top { background: var(--hrk-surface); padding: clamp(40px, 6vw, 64px) 0 clamp(28px, 4vw, 44px); }
+.abe-lab { font-family: var(--hrk-font-label); font-size: var(--hrk-fs-xs); font-weight: var(--hrk-fw-semibold); letter-spacing: .14em;
+  text-transform: uppercase; color: var(--hrk-text-muted); margin: 0 0 var(--hrk-space-3); }
+.abe-h1 { font-family: var(--hrk-font-brand); font-weight: 400; letter-spacing: -.01em; color: var(--hrk-text);
+  font-size: clamp(40px, 7.4vw, 88px); line-height: 1.02; margin: 0; overflow-wrap: anywhere; }
+.abe-intro { max-width: 40rem; margin: var(--hrk-space-5) 0 0; color: var(--hrk-text-muted); }
 
-/* Service-Grid */
-.abe-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--hrk-space-3); }
-@media (max-width: 760px) { .abe-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 480px) { .abe-grid { grid-template-columns: 1fr; } }
-.abe-svc { padding: var(--hrk-space-4); display: flex; flex-direction: column; gap: var(--hrk-space-1); }
-.abe-svc__titel { font-family: var(--hrk-font-head); font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; display: flex; align-items: center; gap: var(--hrk-space-2); flex-wrap: wrap; }
-.abe-badge { display: inline-block; font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-medium); line-height: 1.2; color: var(--hrk-warning); background: var(--hrk-warning-bg); border-radius: var(--hrk-radius-field); padding: 2px var(--hrk-space-2); white-space: nowrap; }
-.abe-svc__text { font-size: var(--hrk-fs-body); color: var(--hrk-text-muted); margin: 0; line-height: 1.45; }
+/* Gruppen: Weiss/Warmgrau im Wechsel, Label-Spalte links, Inhalt rechts unter Linie */
+.abe-band { border-top: 1px solid var(--hrk-linie); }
+.abe-band--grau { background: var(--hrk-warmgrau); }
+.abe-band--weiss { background: var(--hrk-surface); }
+.abe-grp { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: var(--hrk-space-6); padding-top: 28px; padding-bottom: 28px; }
+.abe-grp__lab { min-width: 0; }
+.abe-nr { display: block; font-family: var(--hrk-font-label); font-size: var(--hrk-fs-xs); font-weight: var(--hrk-fw-semibold); letter-spacing: .14em; color: var(--hrk-text-muted); margin-bottom: 6px; }
+.abe-gt { font-family: var(--hrk-font-brand); font-weight: 400; letter-spacing: -.01em; font-size: 26px; line-height: 1.15; margin: 0; color: var(--hrk-text); overflow-wrap: anywhere; }
+.abe-grp__body { min-width: 0; border-top: 1px solid var(--hrk-text); padding-top: var(--hrk-space-3); }
+.abe-sub { margin: 0 0 var(--hrk-space-4); color: var(--hrk-text-muted); }
 
-/* Vergleichstabelle */
-.abe-table-wrap { overflow-x: auto; border: 1px solid var(--hrk-border); border-radius: var(--hrk-radius-card); background: var(--hrk-surface); }
-.abe-table { width: 100%; border-collapse: collapse; min-width: 560px; font-size: var(--hrk-fs-body); }
-.abe-table th, .abe-table td { padding: var(--hrk-space-3) var(--hrk-space-4); text-align: center; border-bottom: 1px solid var(--hrk-border); }
-.abe-table thead th { background: var(--hrk-surface-muted); color: var(--hrk-schiefer); font-family: var(--hrk-font-head); font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-semibold); vertical-align: top; border-bottom-color: var(--hrk-border-strong); }
-.abe-table tbody tr:last-child td { border-bottom: none; }
-.abe-table__lead { text-align: left; font-weight: var(--hrk-fw-medium); color: var(--hrk-text); }
-.abe-price { display: block; font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-regular); color: var(--hrk-text-muted); margin-top: 2px; }
-.abe-col--plus { background: var(--hrk-schiefer-soft); color: var(--hrk-schiefer); }
-.abe-table thead th.abe-col--plus { background: var(--hrk-schiefer-soft); }
+/* Services: Verzeichnis, zwei Spalten, Haarlinien */
+.abe-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: var(--hrk-space-6); }
+.abe-svc { padding: var(--hrk-space-3) 0; border-bottom: 1px solid var(--hrk-linie); min-width: 0; }
+.abe-svc__titel { font-family: var(--hrk-font-body); font-size: var(--hrk-fs-body); font-weight: var(--hrk-fw-semibold); color: var(--hrk-text); margin: 0; display: flex; align-items: baseline; gap: var(--hrk-space-2); flex-wrap: wrap; }
+.abe-badge { display: inline-flex; align-items: center; gap: 6px; font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-semibold); line-height: 1.4; color: var(--hrk-warning); white-space: nowrap; }
+.abe-badge::before { content: ""; flex: none; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.abe-svc__text { font-size: var(--hrk-fs-small); color: var(--hrk-text-muted); margin: var(--hrk-space-1) 0 0; line-height: 1.45; }
+
+/* Vergleich: Tabelle nur mit Linien */
+.abe-table { width: 100%; border-collapse: collapse; font-size: var(--hrk-fs-body); }
+.abe-table th, .abe-table td { padding: var(--hrk-space-3) var(--hrk-space-3) var(--hrk-space-3) 0; text-align: left; border-bottom: 1px solid var(--hrk-linie); vertical-align: top; overflow-wrap: anywhere; }
+.abe-table thead th { font-family: var(--hrk-font-label); font-size: var(--hrk-fs-xs); font-weight: var(--hrk-fw-semibold); letter-spacing: .14em; text-transform: uppercase; color: var(--hrk-text-muted); border-bottom-color: var(--hrk-text); }
+.abe-table tbody tr:last-child td { border-bottom: 0; }
+.abe-table__lead { font-weight: var(--hrk-fw-medium); color: var(--hrk-text); width: 40%; }
+.abe-table thead th.abe-table__lead { font-weight: var(--hrk-fw-semibold); color: var(--hrk-text-muted); }
+.abe-col--abo { font-weight: var(--hrk-fw-semibold); color: var(--hrk-schiefer); }
+.abe-table thead th.abe-col--abo { color: var(--hrk-schiefer); }
+.abe-price { display: block; margin-top: 2px; font-family: var(--hrk-font-mono); font-size: var(--hrk-fs-small); font-weight: var(--hrk-fw-regular); letter-spacing: 0; text-transform: none; color: var(--hrk-text-muted); }
 .abe-fine { font-size: var(--hrk-fs-small); color: var(--hrk-text-muted); margin: var(--hrk-space-3) 0 0; line-height: 1.5; }
 
 /* Ersparnis */
-.abe-save { background: var(--hrk-surface-muted); border-radius: var(--hrk-radius-card); padding: var(--hrk-space-5); }
-.abe-save .abe-h2 { margin-top: 0; }
-.abe-save__text { margin: 0; font-size: var(--hrk-fs-body); color: var(--hrk-text); line-height: 1.55; }
+.abe-save__text { margin: 0; max-width: 42rem; color: var(--hrk-text); line-height: 1.55; }
 
-/* CTA */
-.abe-cta { display: flex; justify-content: center; gap: var(--hrk-space-3); flex-wrap: wrap; }
+/* Text-Knoepfe: vorwaerts = Schiefer-Text mit 2px Gold-Unterstrich (eine Hauptaktion); Zurueck = grauer Text, Haarlinie */
+.abe-cta { display: flex; align-items: center; gap: var(--hrk-space-5); flex-wrap: wrap; padding-top: 28px; padding-bottom: 28px; }
+.abe-fw { display: inline-flex; align-items: center; gap: 10px; min-height: var(--hrk-tap-min); background: none; border: 0; border-bottom: 2px solid var(--hrk-gold);
+  border-radius: 0; padding: 6px 0; font: 600 16px/1.3 var(--hrk-font-body); color: var(--hrk-schiefer); cursor: pointer; }
+.abe-fw:hover { color: var(--hrk-schiefer-dark); }
+.abe-fw .abe-icon { transition: transform .15s; }
+.abe-fw:hover .abe-icon { transform: translateX(3px); }
+.abe-fw--lg { font-size: 18px; padding: 8px 0; }
+.abe-icon { width: 16px; height: 16px; flex: none; }
+.abe-bk { display: inline-flex; align-items: center; min-height: var(--hrk-tap-min); background: none; border: 0; border-bottom: 1px solid var(--hrk-linie);
+  border-radius: 0; padding: 6px 0; font: 500 var(--hrk-fs-small)/1.3 var(--hrk-font-body); color: var(--hrk-text-muted); cursor: pointer; }
+.abe-bk:hover { color: var(--hrk-text); border-bottom-color: var(--hrk-text-muted); }
+
+@media (max-width: 860px) {
+  .abe-grp { grid-template-columns: minmax(0, 1fr); gap: var(--hrk-space-4); }
+  .abe-gt { font-size: 24px; }
+}
+@media (max-width: 600px) {
+  .abe-list { grid-template-columns: minmax(0, 1fr); }
+  .abe-table { font-size: var(--hrk-fs-small); table-layout: fixed; }
+  .abe-table th, .abe-table td { padding-right: var(--hrk-space-2); }
+  .abe-table thead th { letter-spacing: .08em; }
+  .abe-cta { flex-direction: column; align-items: flex-start; gap: var(--hrk-space-3); }
+}
 </style>
