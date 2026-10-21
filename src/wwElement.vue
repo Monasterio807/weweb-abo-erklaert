@@ -56,7 +56,7 @@
                 </tr>
               </tbody>
             </table>
-            <p class="abe-fine">Jährlich zahlst du 10× statt 12×: 2 Monate geschenkt (CHF 290 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
+            <p class="abe-fine">Jährlich zahlst du 11× statt 12×: 1 Monat gratis (CHF 319 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
           </div>
         </div>
       </section>
@@ -129,12 +129,11 @@ export default {
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
         { titel: 'Krankmeldung', text: 'Krankentaggeld-Meldung (KTG) ohne Papierkram erfasst.' },
         { titel: 'Unfallmeldung', text: 'Unfallmeldung (UVG) schnell und vollständig.' },
-        { titel: 'Verwarnung', text: 'Rechtssichere Verwarnung Schritt für Schritt.' },
+        { titel: 'Verwarnung', text: 'Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
         { titel: 'Onboarding', text: 'Eintritte sauber abwickeln, mit Checkliste.' },
         { titel: 'Mitarbeitende', text: 'Alle Unterlagen deiner Mitarbeitenden an einem Ort.' },
-        { titel: 'Stelleninserat', text: 'Ansprechende Inserate in Minuten getextet.' },
         { titel: 'Emily, die HR-Assistentin', text: 'Beantwortet deine HR-Fragen sofort und verständlich, jede Antwort ist geprüft.' },
         { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente, jederzeit einzeln zubuchbar.' },
       ],
@@ -142,7 +141,7 @@ export default {
         { label: 'Dokumente pro Monat', ohne: 'CHF 6/Stück', imploya: '15 inklusive' },
         { label: 'Emily-Fragen', ohne: 'CHF 9 / 10 Fragen', imploya: '30 pro Monat' },
         { label: 'Vertrag, Kündigung, Krankmeldung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
-        { label: 'Zeugnis, Verwarnung, Stelleninserat', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
+        { label: 'Zeugnis, Verwarnung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
         { label: 'Mitarbeitende & Dokumenten-Upload', ohne: '—', imploya: 'inklusive' },
         { label: 'Offboarding-Paket & Saison-Kit', ohne: '—', imploya: 'inklusive' },
         { label: 'Onboarding-Checkliste & Vorlagen', ohne: '—', imploya: 'inklusive' },
