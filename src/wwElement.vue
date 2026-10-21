@@ -125,7 +125,7 @@ export default {
   data() {
     return {
       services: [
-        { titel: 'Arbeitsvertrag', text: 'L-GAV-konformer Vertrag in wenigen Minuten, mit den richtigen Klauseln.' },
+        { titel: 'Arbeitsvertrag', text: 'Vertrag nach OR und L-GAV, mit den richtigen Klauseln.' },
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
         { titel: 'Krankmeldung', text: 'Krankentaggeld-Meldung (KTG) ohne Papierkram erfasst.' },
         { titel: 'Unfallmeldung', text: 'Unfallmeldung (UVG) schnell und vollständig.' },
