@@ -127,7 +127,6 @@ export default {
       services: [
         { titel: 'Arbeitsvertrag', text: 'Vertrag nach OR und L-GAV, mit den richtigen Klauseln.' },
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
-        { titel: 'Unfallmeldung', text: 'Unfallmeldung (UVG) schnell und vollständig.' },
         { titel: 'Verwarnung', text: 'Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
