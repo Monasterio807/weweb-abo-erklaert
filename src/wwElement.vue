@@ -127,8 +127,6 @@ export default {
       services: [
         { titel: 'Arbeitsvertrag', text: 'Vertrag nach OR und L-GAV, mit den richtigen Klauseln.' },
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
-        { titel: 'Krankmeldung', text: 'Krankentaggeld-Meldung (KTG) ohne Papierkram erfasst.' },
-        { titel: 'Unfallmeldung', text: 'Unfallmeldung (UVG) schnell und vollständig.' },
         { titel: 'Verwarnung', text: 'Verwarnung Schritt für Schritt.' },
         { titel: 'Arbeitszeugnis', text: 'Zeugnis aus geprüften Bausteinen, fair und wohlwollend.' },
         { titel: 'Ferien & Überstunden', text: 'Saldi im Blick, Übersicht als PDF zum Unterschreiben.' },
@@ -140,7 +138,7 @@ export default {
       vergleich: [
         { label: 'Dokumente pro Monat', ohne: 'CHF 6/Stück', imploya: '15 inklusive' },
         { label: 'Emily-Fragen', ohne: 'CHF 9 / 10 Fragen', imploya: '30 pro Monat' },
-        { label: 'Vertrag, Kündigung, Krankmeldung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
+        { label: 'Vertrag, Kündigung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
         { label: 'Zeugnis, Verwarnung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
         { label: 'Mitarbeitende & Dokumenten-Upload', ohne: '—', imploya: 'inklusive' },
         { label: 'Offboarding-Paket & Saison-Kit', ohne: '—', imploya: 'inklusive' },
