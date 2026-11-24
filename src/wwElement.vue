@@ -45,7 +45,7 @@
                 <tr>
                   <th class="abe-table__lead">Leistung</th>
                   <th>Ohne Abo</th>
-                  <th class="abe-col--abo">imploya<span class="abe-price hrk-num">CHF 29/Mt.</span></th>
+                  <th class="abe-col--abo">imploya<span class="abe-price hrk-num">CHF {{ p.aboMonat }}/Mt.</span></th>
                 </tr>
               </thead>
               <tbody>
@@ -56,7 +56,7 @@
                 </tr>
               </tbody>
             </table>
-            <p class="abe-fine">Jährlich zahlst du 11× statt 12×: 1 Monat gratis (CHF 319 im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
+            <p class="abe-fine">Jährlich zahlst du {{ jahresMonate }} Monate und bekommst 12 (CHF {{ p.aboJahr }} im Jahr). Beratung ist nicht im Abo inklusive, aber jederzeit einzeln zubuchbar.</p>
           </div>
         </div>
       </section>
@@ -68,7 +68,7 @@
             <h2 class="abe-gt">Lohnt sich ein Abo für dich?</h2>
           </div>
           <div class="abe-grp__body">
-            <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF 6 pro Dokument</strong> und <strong>CHF 9 pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF 30. Mit imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF 29 im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
+            <p class="abe-save__text">Ohne Abo zahlst du <strong>CHF {{ p.dokumentOhneAbo }} pro Dokument</strong> und <strong>CHF {{ p.emily10OhneAbo }} pro 10 Emily-Fragen</strong>. Schon 5 Dokumente einzeln kosten CHF {{ fuenfDokumente }}. Mit imploya sind 15 drin, dazu 30 Emily-Fragen pro Monat, für CHF {{ p.aboMonat }} im Monat. Wer regelmässig HR-Aufgaben erledigt, fährt mit dem Abo günstiger und plant besser.</p>
           </div>
         </div>
       </section>
@@ -113,6 +113,10 @@ function hrkEnsureBrandFont() {
   } catch (e) { /* Georgia als Rueckfall */ }
 }
 
+// PREISE-QUELLE:start (A-040, 24.11.2026) Werte = docs/claude/preise/preise-quelle.json im Hauptrepo, geprueft mit preis-quelle-pruefen.mjs. Nie hier allein aendern.
+const PREISE = Object.freeze({"aboMonat":42,"aboJahr":462,"dokumentOhneAbo":6,"emily10OhneAbo":11});
+// PREISE-QUELLE:end
+
 export default {
   props: {
     content: { type: Object, required: true },
@@ -124,6 +128,8 @@ export default {
   emits: ['trigger-event'],
   data() {
     return {
+      // A-040: Preise nur aus dem Block PREISE-QUELLE (eine Quelle, kein Festtext).
+      p: PREISE,
       services: [
         { titel: 'Arbeitsvertrag', text: 'Vertrag nach OR und L-GAV, mit den richtigen Klauseln.' },
         { titel: 'Kündigung', text: 'Kündigungsschreiben mit korrekten Fristen, sauber formuliert.' },
@@ -136,10 +142,10 @@ export default {
         { titel: 'Experten-Beratung', text: 'Unsere Profis prüfen deine Dokumente, jederzeit einzeln zubuchbar.' },
       ],
       vergleich: [
-        { label: 'Dokumente pro Monat', ohne: 'CHF 6/Stück', imploya: '15 inklusive' },
-        { label: 'Emily-Fragen', ohne: 'CHF 9 / 10 Fragen', imploya: '30 pro Monat' },
-        { label: 'Vertrag, Kündigung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
-        { label: 'Zeugnis, Verwarnung', ohne: 'einzeln (CHF 6/Dok.)', imploya: 'inklusive' },
+        { label: 'Dokumente pro Monat', ohne: `CHF ${PREISE.dokumentOhneAbo}/Stück`, imploya: '15 inklusive' },
+        { label: 'Emily-Fragen', ohne: `CHF ${PREISE.emily10OhneAbo} / 10 Fragen`, imploya: '30 pro Monat' },
+        { label: 'Vertrag, Kündigung', ohne: `einzeln (CHF ${PREISE.dokumentOhneAbo}/Dok.)`, imploya: 'inklusive' },
+        { label: 'Zeugnis, Verwarnung', ohne: `einzeln (CHF ${PREISE.dokumentOhneAbo}/Dok.)`, imploya: 'inklusive' },
         { label: 'Mitarbeitende & Dokumenten-Upload', ohne: '—', imploya: 'inklusive' },
         { label: 'Offboarding-Paket & Saison-Kit', ohne: '—', imploya: 'inklusive' },
         { label: 'Onboarding-Checkliste & Vorlagen', ohne: '—', imploya: 'inklusive' },
@@ -148,6 +154,12 @@ export default {
     };
   },
   computed: {
+    // A-040: gerechnet, nicht behauptet (462 / 42 = 11; 5 x 6 = 30).
+    jahresMonate() {
+      const m = PREISE.aboMonat; const j = PREISE.aboJahr;
+      return (m && j && j % m === 0 && j / m < 12) ? j / m : 0;
+    },
+    fuenfDokumente() { return 5 * PREISE.dokumentOhneAbo; },
     aboUrl() { return ((this.content && this.content.aboUrl) || '/abo').toString(); },
     backUrl() { return ((this.content && this.content.backUrl) || '').toString(); },
     hasBack() { return this.backUrl.length > 0; },
